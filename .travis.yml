@@ -1,5 +1,5 @@
-install:
-  - ./gradlew assemble
+#install:
+#  - ./gradlew assemble
 
 language: android
 
@@ -15,4 +15,4 @@ addons:
       secure: "a25c021edaee91dc99372faafd968212d58945fc"
 
 script:
-  - gradle clean sonarqube
+  - ./gradlew sonarqube -Dsonar.projectKey=vtraineau_blokish-testing-travis -Dsonar.organization=vtraineau-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=a25c021edaee91dc99372faafd968212d58945fc
