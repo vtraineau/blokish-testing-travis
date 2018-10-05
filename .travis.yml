@@ -3,3 +3,11 @@ android:
   components:
     - build-tools-27.0.3
     - android-27
+addons:
+  sonarcloud:
+    organization: "vtraineau-github"
+    token:
+      secure: "a25c021edaee91dc99372faafd968212d58945fc"
+
+script:
+  - gradle clean sonarqube
