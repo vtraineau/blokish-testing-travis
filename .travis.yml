@@ -17,6 +17,7 @@ addons:
 script:
   - ./gradlew clean
   - ./gradlew sonarqube -Dsonar.projectKey=vtraineau_blokish-testing-travis -Dsonar.organization=vtraineau-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=a25c021edaee91dc99372faafd968212d58945fc
+  - set -ev
   - wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
   - chmod ugo+x opam
   - ./opam init --yes --comp=4.01.0
@@ -26,4 +27,5 @@ script:
   - cd infer
   - ./build-infer.sh java
   - export PATH=`pwd`/infer/bin:$PATH
+  - cd ..
   - infer run -- ./gradlew build
