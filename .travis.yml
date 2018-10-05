@@ -19,6 +19,8 @@ script:
   - ./gradlew sonarqube -Dsonar.projectKey=vtraineau_blokish-testing-travis -Dsonar.organization=vtraineau-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=a25c021edaee91dc99372faafd968212d58945fc
   - git clone https://github.com/facebook/infer.git
   - cd infer
-  - ./build-infer.sh java
+  - ./autogen.sh
+  - ./configure
+  - make
   - export PATH=`pwd`/infer/bin:$PATH
   - infer run -- gradle build
