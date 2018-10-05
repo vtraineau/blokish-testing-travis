@@ -17,15 +17,8 @@ addons:
 script:
   - ./gradlew clean
   - ./gradlew sonarqube -Dsonar.projectKey=vtraineau_blokish-testing-travis -Dsonar.organization=vtraineau-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=a25c021edaee91dc99372faafd968212d58945fc
-  - set -ev
-  - wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
-  - chmod ugo+x opam
-  - ./opam init --yes --comp=4.01.0
-  - eval `./opam config env`
-  - ./opam install --yes sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4
-  - git clone https://github.com/facebook/infer.git
-  - cd infer
-  - make -C infer java
-  - export PATH=`pwd`/infer/bin:$PATH
-  - cd ..
+  - VERSION=0.15.0;
+  - curl -sSL "https://github.com/facebook/infer/releases/download/v$VERSION/infer-linux64-v$VERSION.tar.xz" | 
+sudo tar -C /opt -xJ && \
+  - ln -s "/opt/infer-linux64-v$VERSION/bin/infer" /usr/local/bin/infer
   - infer run -- ./gradlew build
