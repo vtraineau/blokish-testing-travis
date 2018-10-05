@@ -1,5 +1,10 @@
-﻿Blokish
+Blokish
 =======
+Here is a 
+[link](https://github.com/McGill-ECSE429-Fall2018/team-01-blokish/wiki) 
+to our wiki explaining individual and team 
+efforts for the assignment.
+
 ![blokish](http://blokish.scoutant.org/blokish_nexus_6)
 
 # Blokish
