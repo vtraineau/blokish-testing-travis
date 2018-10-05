@@ -1,8 +1,13 @@
+install:
+  - ./gradlew assemble
+
 language: android
+
 android:
   components:
     - build-tools-27.0.3
     - android-27
+
 addons:
   sonarcloud:
     organization: "vtraineau-github"
